@@ -2,7 +2,6 @@ package com.cricketgullygully.console.controller;
 
 import com.cricketgullygully.console.entity.Player;
 import com.cricketgullygully.console.service.PlayerService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +24,5 @@ public class PlayerController {
 		System.out.println("Called getPlayer");
 		return playerService.getPlayerById(id);
 	}
-	
-	
+
 }
