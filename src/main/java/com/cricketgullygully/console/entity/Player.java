@@ -1,16 +1,22 @@
 package com.cricketgullygully.console.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Player {
 
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	private String name;
-	public Player() {
-
-	}
-	public Player(String name) {
-		this.name = name;
-	}
-	public String getName() {
-		return name;
-	}
 }
