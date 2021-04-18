@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -14,6 +16,7 @@ import javax.persistence.Id;
 public class Team {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	Integer id;
 	String name;
 	String shortName;
