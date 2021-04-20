@@ -1,13 +1,8 @@
 package com.cricketgullygully.console.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -18,5 +13,14 @@ public class Player {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String name;
+	private String 	name;
+	private Integer totalMatchPlayed;
+	private Integer totalRun;
+	private Integer totalOver;
+	private Integer totalWicket;
+	private Integer totalOverBowled;
+
+	@ManyToOne
+	@JoinColumn
+	private Team team;
 }
