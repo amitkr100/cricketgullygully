@@ -2,10 +2,13 @@ package com.cricketgullygully.console.dto;
 
 import com.cricketgullygully.console.entity.MatchInfo;
 import com.cricketgullygully.console.entity.Team;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @AllArgsConstructor
@@ -13,13 +16,19 @@ import java.util.Optional;
 @Data
 public class Scoreboard {
 
-	private Inning inningOne;
-	private Inning inningTwo;
 
-	public void init(Team teamOne, Team teamTwo, MatchInfo matchInfo) {
-		inningOne = new Inning();
-		inningOne.init(teamOne.getName(), matchInfo.getTotalOver(), matchInfo.getTeamOnePlaying11());
-		inningTwo = new Inning();
-		inningTwo.init(teamTwo.getName(), matchInfo.getTotalOver(), matchInfo.getTeamTwoPlaying11());
+	List<Inning> innings = new ArrayList<>();
+
+	public void addInning(MatchInfo matchInfo) {
+		Inning inning = new Inning();
+		inning.setTeamName(matchInfo.getTeamBattingNow().getName());
+		inning.setPlaying11(matchInfo.getTeamPlaying11BattingNow());
+		inning.setTotalOver(matchInfo.getTotalOver());
+		innings.add(inning);
+	}
+
+	@JsonIgnore
+	public Inning getCurrentInning() {
+		return innings.get(innings.size() - 1);
 	}
 }

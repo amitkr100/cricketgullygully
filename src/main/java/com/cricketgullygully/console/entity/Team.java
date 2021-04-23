@@ -1,11 +1,11 @@
 package com.cricketgullygully.console.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,13 +16,15 @@ import java.util.List;
 public class Team {
 
 	@Id
-	@GeneratedValue
-	private Integer id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonProperty(access = Access.WRITE_ONLY)
+	private Long id;
 	private String name;
+	@Column(unique = true)
 	private String shortName;
 
 	@OneToMany(mappedBy = "team")
-	@Getter(AccessLevel.NONE)
+	@JsonIgnore
 	private List<Player> players = new ArrayList<>();
 
 	public void addPlayer(Player player)
@@ -30,4 +32,5 @@ public class Team {
 		this.players.add(player);
 		player.setTeam(this);
 	}
+
 }

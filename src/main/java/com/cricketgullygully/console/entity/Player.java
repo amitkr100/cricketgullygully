@@ -11,14 +11,14 @@ import javax.persistence.*;
 public class Player {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 	private String 	name;
-	private Integer totalMatchPlayed;
-	private Integer totalRun;
-	private Integer totalOver;
-	private Integer totalWicket;
-	private Integer totalOverBowled;
+	private long totalMatchPlayed;
+	private long totalRun;
+	private long totalOver;
+	private long totalWicket;
+	private long totalOverBowled;
 
 	@ManyToOne
 	@JoinColumn

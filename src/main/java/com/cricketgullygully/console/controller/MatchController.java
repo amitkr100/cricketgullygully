@@ -1,13 +1,14 @@
 package com.cricketgullygully.console.controller;
 
+import com.cricketgullygully.console.dto.Toss;
 import com.cricketgullygully.console.entity.MatchInfo;
-import com.cricketgullygully.console.repo.MatchInfoRepository;
 import com.cricketgullygully.console.service.MatchInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -26,8 +27,24 @@ public class MatchController {
 	}
 
 	@GetMapping("/{id}")
-	public MatchInfo getMatchInfo(@PathVariable int id) {
+	public MatchInfo getMatchInfo(@PathVariable Long id) {
 		log.debug("Called getMatchInfo");
 		return matchInfoService.findMatchInfoByID(id);
+	}
+	@PostMapping("/{id}/addPlayers")
+	public MatchInfo setPlayersInfo(@PathVariable Long id, @RequestBody Map<String, List<Long>> payload)
+	{
+		return matchInfoService.setPlayerInfo(id, payload);
+	}
+	@PostMapping("/{id}/toss")
+	public MatchInfo setTossInfo(@PathVariable Long id, @RequestBody Toss toss)
+	{
+		return matchInfoService.setTossInfo(id, toss);
+	}
+
+	@PostMapping("/{id}/openers")
+	public MatchInfo setOpeners(@PathVariable Long id, @RequestBody Map<String, String> payload)
+	{
+		return matchInfoService.setOpeningPlayers(id, payload);
 	}
 }

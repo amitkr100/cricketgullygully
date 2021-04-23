@@ -4,8 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.cricketgullygully.console.entity.Team;
 
-public interface TeamRepository extends JpaRepository<Team, Integer> {
+public interface TeamRepository extends JpaRepository<Team, Long> {
 
-	Team getById(int id);
 
 }

@@ -17,12 +17,15 @@ public class PlayerService {
 		return playerRepository.save(player);
 	}
 
-	public Player getPlayerById(int id) {
-		return playerRepository.getById(id);
+	public Player getPlayerById(long id) {
+		return playerRepository.findById(id).get();
 	}
 
-	public void saveAll(List<Player> players) {
-		playerRepository.saveAll(players);
+	public List<Player> saveAll(List<Player> players) {
+		return playerRepository.saveAll(players);
 	}
 
+	public List<Player> getPlayers() {
+		return playerRepository.findAll();
+	}
 }

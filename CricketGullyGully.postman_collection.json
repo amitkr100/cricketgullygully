@@ -1,0 +1,714 @@
+{
+	"info": {
+		"_postman_id": "147b1d0e-834f-4e08-aa30-b1ff716ecfad",
+		"name": "CricketGullyGully",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Team APIs",
+			"item": [
+				{
+					"name": "Creat team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":0,\r\n    \"name\": \"India\",\r\n    \"shortName\": \"IND\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Many Teams",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Chennai Super King\",\r\n    \"shortName\": \"CSK\"\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Punjab Kings\",\r\n    \"shortName\": \"PBKS\"\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Sunrisers Hydrabad\",\r\n    \"shortName\": \"SH\"\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Kolkata Knight Ridrs\",\r\n    \"shortName\": \"KKR\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team/createMany",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"createMany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Team by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"Suraj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Teams",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"Suraj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Players by TeamId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"Suraj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team/1/players",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"1",
+								"players"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Player API",
+			"item": [
+				{
+					"name": "Create One Player",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Indu\",\r\n    \"totalMatchPlayed\": 10,\r\n    \"totalRun\": 308,\r\n    \"totalOver\": 4.6,\r\n    \"totalWicket\": 6,\r\n    \"totalOverBowled\": 3,\r\n     \"team\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/player/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Many Players",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Pat Cummins\",\r\n    \"team\": {\r\n      \"id\": 4\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Harbhajan Singh\",\r\n    \"team\": {\r\n      \"id\": 4\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Prasidh Krishna\",\r\n    \"team\": {\r\n      \"id\": 4\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Varun Chakravarthy\",\r\n    \"team\": {\r\n      \"id\": 4\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Ruturaj Gaikwad\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Faf du Plessis\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Moeen Ali\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Suresh Raina\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"KL Rahul\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Mayank Agarwal\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Chris Gayle\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Moises Henriques\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Nicholas Pooran\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Kane Williamson\",\r\n    \"team\": {\r\n      \"id\": 3\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Virat Singh\",\r\n    \"team\": {\r\n      \"id\": 3\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Vijay Shankar\",\r\n    \"team\": {\r\n      \"id\": 3\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Abhishek Sharma\",\r\n    \"team\": {\r\n      \"id\": 3\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/player/createMany",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player",
+								"createMany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Many Players Backup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \"Nitish Rana\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Shubman Gill\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Rahul Tripathi\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Eoin Morgan (c)\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Shakib Al Hasan\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Dinesh Karthik\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Andre Russell\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Pat Cummins\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Harbhajan Singh\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Prasidh Krishna\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \" Varun Chakravarthy\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Ruturaj Gaikwad\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Faf du Plessis\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Moeen Ali\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Suresh Raina\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Ambati Rayudu\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Ravindra Jadeja\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"MS Dhoni\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Sam Curran\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Shardul Thakur\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Dwayne Bravo\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Deepak Chahar\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n  \"id\": 0,\r\n  \"name\": \"KL Rahul\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Mayank Agarwal\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Chris Gayle\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Moises Henriques\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Nicholas Pooran\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Deepak Hooda\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Shahrukh Khan\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Fabian Allen\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Murugan Ashwin\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Mohammed Shami\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \" Arshdeep Singh\",\r\n  \"team\": {\r\n    \"id\": 2\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"David Warner\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Jonny Bairstow\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Kane Williamson\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Virat Singh\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Vijay Shankar\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Abhishek Sharma\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Kedar Jadhav\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Rashid Khan\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Bhuvneshwar Kumar\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Khaleel Ahmed\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n},\r\n{\r\n  \"id\": 0,\r\n  \"name\": \"Siddarth Kaul\",\r\n  \"team\": {\r\n    \"id\": 3\r\n  }\r\n}\r\n  \r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/player/createMany",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player",
+								"createMany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Player by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/player/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Players",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/player/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Init Test",
+			"item": [
+				{
+					"name": "Create Many Teams",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Chennai Super King\",\r\n    \"shortName\": \"CSK\"\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Punjab Kings\",\r\n    \"shortName\": \"PBKS\"\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Sunrisers Hydrabad\",\r\n    \"shortName\": \"SH\"\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Kolkata Knight Ridrs\",\r\n    \"shortName\": \"KKR\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team/createMany",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"createMany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Many Players",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Pat Cummins\",\r\n    \"team\": {\r\n      \"id\": 4\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Harbhajan Singh\",\r\n    \"team\": {\r\n      \"id\": 4\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Prasidh Krishna\",\r\n    \"team\": {\r\n      \"id\": 4\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Varun Chakravarthy\",\r\n    \"team\": {\r\n      \"id\": 4\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Ruturaj Gaikwad\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Faf du Plessis\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Moeen Ali\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Suresh Raina\",\r\n    \"team\": {\r\n      \"id\": 1\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"KL Rahul\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Mayank Agarwal\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Chris Gayle\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Moises Henriques\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Nicholas Pooran\",\r\n    \"team\": {\r\n      \"id\": 2\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Kane Williamson\",\r\n    \"team\": {\r\n      \"id\": 3\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Virat Singh\",\r\n    \"team\": {\r\n      \"id\": 3\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Vijay Shankar\",\r\n    \"team\": {\r\n      \"id\": 3\r\n    }\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"name\": \"Abhishek Sharma\",\r\n    \"team\": {\r\n      \"id\": 3\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/player/createMany",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player",
+								"createMany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Match",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"teamOne\": {\"id\":1},\r\n    \"teamTwo\": {\"id\":2},\r\n    \"totalOver\": 5\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/match/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Players to team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.response.to.have.status(200);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"teamOnePlaying11\": [5,6,7],\r\n    \"teamTwoPlaying11\": [9,10,11]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/match/1/addPlayers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"1",
+								"addPlayers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toss a coin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"winner\":\"TEAMONE\",\r\n    \"battingFirst\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/match/1/toss",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"1",
+								"toss"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Opening Batsman & Bowler",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"striker\":\"KL Rahul\",\r\n    \"nonStriker\":\"Mayank Agarwal\",\r\n    \"bowler\":\"Moeen Ali\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/match/1/openers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"1",
+								"openers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Match by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/match/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Match APIs",
+			"item": [
+				{
+					"name": "Save Match Info",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"teamOne\": {\"id\":1},\r\n    \"teamTwo\": {\"id\":2},\r\n    \"totalOver\": 5\r\n}\r\n   \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/match/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toss a coin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"winner\":\"TEAMTWO\",\r\n    \"battingFirst\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/match/1/toss",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"1",
+								"toss"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Match by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"Suraj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/match/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
