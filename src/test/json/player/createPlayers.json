@@ -1,0 +1,121 @@
+[
+  {
+    "id": 0,
+    "name": "Pat Cummins",
+    "team": {
+      "id": 4
+    }
+  },
+  {
+    "id": 0,
+    "name": "Harbhajan Singh",
+    "team": {
+      "id": 4
+    }
+  },
+  {
+    "id": 0,
+    "name": "Prasidh Krishna",
+    "team": {
+      "id": 4
+    }
+  },
+  {
+    "id": 0,
+    "name": "Varun Chakravarthy",
+    "team": {
+      "id": 4
+    }
+  },
+  {
+    "id": 0,
+    "name": "Ruturaj Gaikwad",
+    "team": {
+      "id": 1
+    }
+  },
+  {
+    "id": 0,
+    "name": "Faf du Plessis",
+    "team": {
+      "id": 1
+    }
+  },
+  {
+    "id": 0,
+    "name": "Moeen Ali",
+    "team": {
+      "id": 1
+    }
+  },
+  {
+    "id": 0,
+    "name": "Suresh Raina",
+    "team": {
+      "id": 1
+    }
+  },
+  {
+    "id": 0,
+    "name": "KL Rahul",
+    "team": {
+      "id": 2
+    }
+  },
+  {
+    "id": 0,
+    "name": "Mayank Agarwal",
+    "team": {
+      "id": 2
+    }
+  },
+  {
+    "id": 0,
+    "name": "Chris Gayle",
+    "team": {
+      "id": 2
+    }
+  },
+  {
+    "id": 0,
+    "name": "Moises Henriques",
+    "team": {
+      "id": 2
+    }
+  },
+  {
+    "id": 0,
+    "name": "Nicholas Pooran",
+    "team": {
+      "id": 2
+    }
+  },
+  {
+    "id": 0,
+    "name": "Kane Williamson",
+    "team": {
+      "id": 3
+    }
+  },
+  {
+    "id": 0,
+    "name": "Virat Singh",
+    "team": {
+      "id": 3
+    }
+  },
+  {
+    "id": 0,
+    "name": "Vijay Shankar",
+    "team": {
+      "id": 3
+    }
+  },
+  {
+    "id": 0,
+    "name": "Abhishek Sharma",
+    "team": {
+      "id": 3
+    }
+  }
+]

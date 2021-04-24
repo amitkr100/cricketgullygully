@@ -5,6 +5,8 @@ import com.cricketgullygully.console.repo.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PlayerService {
 
@@ -15,7 +17,15 @@ public class PlayerService {
 		return playerRepository.save(player);
 	}
 
-	public Player getPlayerById(int id) {
-		return playerRepository.getById(id);
+	public Player getPlayerById(long id) {
+		return playerRepository.findById(id).get();
+	}
+
+	public List<Player> saveAll(List<Player> players) {
+		return playerRepository.saveAll(players);
+	}
+
+	public List<Player> getPlayers() {
+		return playerRepository.findAll();
 	}
 }

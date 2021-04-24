@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "name": "Chennai Super King",
+    "shortName": "CSK"
+  },
+  {
+    "id": 0,
+    "name": "Punjab Kings",
+    "shortName": "PBKS"
+  },
+  {
+    "id": 0,
+    "name": "Sunrisers Hydrabad",
+    "shortName": "SH"
+  },
+  {
+    "id": 0,
+    "name": "Kolkata Knight Ridrs",
+    "shortName": "KKR"
+  }
+]
