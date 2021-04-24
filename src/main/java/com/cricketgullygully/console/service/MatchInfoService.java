@@ -7,13 +7,11 @@ import com.cricketgullygully.console.entity.Team;
 import com.cricketgullygully.console.repo.MatchInfoRepository;
 import com.cricketgullygully.console.repo.PlayerRepository;
 import com.cricketgullygully.console.repo.TeamRepository;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -90,6 +88,17 @@ public class MatchInfoService {
 		matchInfo.getScoreboard().getCurrentInning().getBatsmanScores().add(new BatsmanScore(nonStriker));
 		matchInfo.getScoreboard().getCurrentInning().getBowlerScores().add(new BowlerScore(bowler));
 		return matchInfo;
+	}
+
+	public MatchInfo setPlayerOut(Long id, WicketInfo wicketInfo) {
+		MatchInfo matchInfo = matchInfoRepository.findById(id)
+				.orElseThrow(EntityNotFoundException::new);
+		PlayerName batsman = matchInfo.getPlayerFromPlayerName(wicketInfo.getBatsMan());
+		PlayerName bowler = matchInfo.getPlayerFromPlayerName(wicketInfo.getBowler());
+		PlayerName fielder = matchInfo.getPlayerFromPlayerName(wicketInfo.getFielder());
+		matchInfo.getScoreboard().getCurrentInning().setBatsmanOut(batsman,bowler,fielder,wicketInfo);
+		matchInfo.getScoreboard().getCurrentInning().addWicketToBowler(bowler.getName());
+		return  matchInfo;
 	}
 
 	// private Map<Long, String> playerProjectionToMap(List<PlayerName> players) {

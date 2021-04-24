@@ -17,7 +17,7 @@ public class BatsmanScore {
 	private Integer ballPlayed = 0;
 	private Integer runScored = 0;
 	private boolean isOut;
-	private String 	outReason;
+	private OutReason outReason;
 
 	public BatsmanScore(PlayerName player) {
 		playerId = player.getId();

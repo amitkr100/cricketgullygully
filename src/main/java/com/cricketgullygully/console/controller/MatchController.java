@@ -1,6 +1,7 @@
 package com.cricketgullygully.console.controller;
 
 import com.cricketgullygully.console.dto.Toss;
+import com.cricketgullygully.console.dto.WicketInfo;
 import com.cricketgullygully.console.entity.MatchInfo;
 import com.cricketgullygully.console.service.MatchInfoService;
 import lombok.extern.slf4j.Slf4j;
@@ -46,5 +47,11 @@ public class MatchController {
 	public MatchInfo setOpeners(@PathVariable Long id, @RequestBody Map<String, String> payload)
 	{
 		return matchInfoService.setOpeningPlayers(id, payload);
+	}
+
+	@PostMapping("/{id}/wicket")
+	public MatchInfo setPlayerOut(@PathVariable Long id, @RequestBody WicketInfo wicketInfo)
+	{
+		return matchInfoService.setPlayerOut(id, wicketInfo);
 	}
 }
