@@ -19,7 +19,7 @@ public class OutReason {
 		String outMessage = "";
 		switch (outType) {
 
-			case BAWLED:
+			case BOWLED:
 				outMessage = String.format("b %s", bowler);
 				break;
 			case CAUGHT:
@@ -48,7 +48,7 @@ public class OutReason {
 	public boolean isWicketToBowler() {
 		switch (getOutType()) {
 
-			case BAWLED:
+			case BOWLED:
 			case CAUGHT:
 			case STUMP:
 			case LBW:
