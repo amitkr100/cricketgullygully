@@ -1,7 +1,7 @@
 package com.cricketgullygully.console.dto.enums;
 
 public enum OutType {
-	BAWLED,
+	BOWLED,
 	CAUGHT,
 	RUNOUT,
 	STUMP,

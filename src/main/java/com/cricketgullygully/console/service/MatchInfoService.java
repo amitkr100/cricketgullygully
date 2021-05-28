@@ -83,7 +83,7 @@ public class MatchInfoService {
 		PlayerName bowler = matchInfo.getPlayerFromPlayerName(payload.get("bowler"));
 		matchInfo.getScoreboard().getCurrentInning().setCurrentStriker(striker.getName());
 		matchInfo.getScoreboard().getCurrentInning().setCurrentNonStriker(nonStriker.getName());
-		matchInfo.getScoreboard().getCurrentInning().setCurrentNonStriker(bowler.getName());
+		matchInfo.getScoreboard().getCurrentInning().setCurrentBowler(bowler.getName());
 		matchInfo.getScoreboard().getCurrentInning().getBatsmanScores().add(new BatsmanScore(striker));
 		matchInfo.getScoreboard().getCurrentInning().getBatsmanScores().add(new BatsmanScore(nonStriker));
 		matchInfo.getScoreboard().getCurrentInning().getBowlerScores().add(new BowlerScore(bowler));
@@ -101,10 +101,14 @@ public class MatchInfoService {
 		return  matchInfo;
 	}
 
-	// private Map<Long, String> playerProjectionToMap(List<PlayerName> players) {
-	// 	Map<Long, String> playerIdToNameMap = new HashMap<>();
-	// 	for (PlayerName playerName : players)
-	// 		playerIdToNameMap.put(playerName.getId(), playerName.getName());
-	// 	return playerIdToNameMap;
-	// }
+	public MatchInfo bowlABall(Long id, BallInfo ballInfo) {
+		
+		MatchInfo matchInfo = matchInfoRepository.findById(id)
+				.orElseThrow(EntityNotFoundException::new);
+		Inning currentInning= matchInfo.getScoreboard().getCurrentInning();
+		currentInning.updateInningDetailsPerBall(ballInfo);
+		return matchInfo;
+	}
+
+	
 }
