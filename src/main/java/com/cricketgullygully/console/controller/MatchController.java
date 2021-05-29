@@ -1,5 +1,6 @@
 package com.cricketgullygully.console.controller;
 
+import com.cricketgullygully.console.dto.BallInfo;
 import com.cricketgullygully.console.dto.Toss;
 import com.cricketgullygully.console.dto.WicketInfo;
 import com.cricketgullygully.console.entity.MatchInfo;
@@ -54,5 +55,11 @@ public class MatchController {
 	public MatchInfo setPlayerOut(@PathVariable Long id, @RequestBody WicketInfo wicketInfo)
 	{
 		return matchInfoService.setPlayerOut(id, wicketInfo);
+	}
+	
+	@PostMapping("/{id}/bowl")
+	public MatchInfo bowlABall(@PathVariable Long id , @RequestBody BallInfo ballInfo)
+	{
+		return matchInfoService.bowlABall(id, ballInfo);
 	}
 }

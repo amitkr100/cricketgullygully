@@ -23,4 +23,14 @@ public class BatsmanScore {
 		playerId = player.getId();
 		name = player.getName();
 	}
+	
+	public void  incrementRunScored(int run)
+	{
+		runScored+=run;
+	}
+	public void  incrementBallPlayed()
+	{
+		ballPlayed+=1;
+	}
+	
 }
