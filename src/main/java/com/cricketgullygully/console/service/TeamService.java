@@ -39,4 +39,8 @@ public class TeamService {
 		return team.map(Team::getPlayers).orElse(null);
 
 	}
+
+	public List<Player> getPlayers(String teamShortName) {
+		return teamRepository.findByShortName(teamShortName).getPlayers();
+	}
 }
