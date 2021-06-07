@@ -15,6 +15,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("match")
+@CrossOrigin
 public class MatchController {
 
 	private final String MATCH_SERVICE = "MATCH_SERVICE";
